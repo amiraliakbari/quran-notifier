@@ -1,0 +1,8 @@
+#!/bin/bash
+
+dir=$(pwd)
+cmd="$dir/display"
+timing="*/15 * * * *"
+(crontab -l; echo "$timing $cmd" ) | crontab -
+mkdir -p ~/.quran/verses
+

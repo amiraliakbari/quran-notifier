@@ -1,0 +1,8 @@
+#!/bin/bash
+
+files=(.quran/verses/*)
+verse=$(shuf -n 1 "${files[RANDOM % ${#files[@]}]}")
+title=$(echo $verse | cut -d'|' -f 1)
+ref=$(echo $verse | cut -d'|' -f 2)
+DISPLAY=:0.0 XAUTHORITY=~/.Xauthority notify-send "$title" "$ref"
+
